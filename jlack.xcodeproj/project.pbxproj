@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04264C1C1FAA2E6D007D58E2 /* SlackRTMWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */; };
+		04264C1E1FAA383E007D58E2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264C1D1FAA383E007D58E2 /* Dollar.framework */; };
+		04264C1F1FAA383E007D58E2 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04264C1D1FAA383E007D58E2 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04264C211FAA3849007D58E2 /* Dollar.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */; };
+		0474A0CC1FA9A75D00A58F10 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */; };
+		0474A0CD1FA9A75D00A58F10 /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0474A0CF1FA9A77300A58F10 /* ReSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */; };
+		0474A0D11FA9A95E00A58F10 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D01FA9A95E00A58F10 /* AppReducer.swift */; };
+		0474A0D31FA9A9AF00A58F10 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D21FA9A9AF00A58F10 /* AppStore.swift */; };
+		0474A0D51FA9AB5600A58F10 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D41FA9AB5600A58F10 /* Settings.swift */; };
+		0474A0D71FA9AE0300A58F10 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D61FA9AE0300A58F10 /* AppActions.swift */; };
+		0484F3D91FA84A1C00083721 /* MessagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484F3D81FA84A1C00083721 /* MessagesCollectionViewController.swift */; };
+		0484F3E41FA855F500083721 /* MessageCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484F3E21FA855F500083721 /* MessageCollectionViewItem.swift */; };
+		0484F3E51FA855F500083721 /* MessageCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484F3E31FA855F500083721 /* MessageCollectionViewItem.xib */; };
+		048E59A21FA9A6D8008B81A5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E59A11FA9A6D8008B81A5 /* AppState.swift */; };
+		049C1DA11FAAF793002AA563 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA01FAAF793002AA563 /* LoginViewController.swift */; };
+		049C1DA31FAAFB5B002AA563 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA21FAAFB5B002AA563 /* Login.swift */; };
+		049C1DA61FAAFE25002AA563 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */; };
+		049C1DA91FAAFF2E002AA563 /* KeyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */; };
+		049C1DAB1FAB004A002AA563 /* LoadMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DAA1FAB004A002AA563 /* LoadMessages.swift */; };
+		04F4C2C71FA82AD900885250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C2C61FA82AD900885250 /* AppDelegate.swift */; };
+		04F4C2CB1FA82AD900885250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F4C2CA1FA82AD900885250 /* Assets.xcassets */; };
+		04F4C2CE1FA82AD900885250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F4C2CC1FA82AD900885250 /* Main.storyboard */; };
+		04F4C2DA1FA82AD900885250 /* jlackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C2D91FA82AD900885250 /* jlackTests.swift */; };
+		04F4C2F01FA8441800885250 /* SKRTMAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */; };
+		04F4C2F11FA8441800885250 /* SKRTMAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04F4C2F21FA8441800885250 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2ED1FA8441700885250 /* SKCore.framework */; };
+		04F4C2F31FA8441800885250 /* SKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2ED1FA8441700885250 /* SKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04F4C2F41FA8441800885250 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EE1FA8441800885250 /* SKWebAPI.framework */; };
+		04F4C2F51FA8441800885250 /* SKWebAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EE1FA8441800885250 /* SKWebAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04F4C2F61FA8441800885250 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EF1FA8441800885250 /* Starscream.framework */; };
+		04F4C2F71FA8441800885250 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EF1FA8441800885250 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04F4C2FE1FA8444100885250 /* Starscream.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */; };
+		04F4C2FF1FA8444100885250 /* SKRTMAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */; };
+		04F4C3001FA8444100885250 /* SKWebAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */; };
+		04F4C3011FA8444100885250 /* SKCore.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FD1FA8444100885250 /* SKCore.framework.dSYM */; };
+		04FE9C601FAAB9B2001B2CCE /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */; };
+		04FE9C621FAABB02001B2CCE /* QuickOpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */; };
+		04FE9C641FAAC6DE001B2CCE /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */; };
+		04FE9C661FAADC3A001B2CCE /* KeyboardListeningWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C651FAADC3A001B2CCE /* KeyboardListeningWindow.swift */; };
+		04FE9C681FAAE31C001B2CCE /* KeyIgnoringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C671FAAE31C001B2CCE /* KeyIgnoringTextView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04F4C2D61FA82AD900885250 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F4C2BB1FA82AD900885250 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F4C2C21FA82AD900885250;
+			remoteInfo = jlack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04F4C2F81FA8441800885250 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				04F4C2F11FA8441800885250 /* SKRTMAPI.framework in Embed Frameworks */,
+				04F4C2F71FA8441800885250 /* Starscream.framework in Embed Frameworks */,
+				04264C1F1FAA383E007D58E2 /* Dollar.framework in Embed Frameworks */,
+				04F4C2F51FA8441800885250 /* SKWebAPI.framework in Embed Frameworks */,
+				0474A0CD1FA9A75D00A58F10 /* ReSwift.framework in Embed Frameworks */,
+				04F4C2F31FA8441800885250 /* SKCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F4C2F91FA8442C00885250 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				0474A0CF1FA9A77300A58F10 /* ReSwift.framework.dSYM in CopyFiles */,
+				04F4C2FE1FA8444100885250 /* Starscream.framework.dSYM in CopyFiles */,
+				04F4C2FF1FA8444100885250 /* SKRTMAPI.framework.dSYM in CopyFiles */,
+				04F4C3001FA8444100885250 /* SKWebAPI.framework.dSYM in CopyFiles */,
+				04F4C3011FA8444100885250 /* SKCore.framework.dSYM in CopyFiles */,
+				04264C211FAA3849007D58E2 /* Dollar.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackRTMWrapper.swift; sourceTree = "<group>"; };
+		04264C1D1FAA383E007D58E2 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/Mac/Dollar.framework; sourceTree = "<group>"; };
+		04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Dollar.framework.dSYM; path = Carthage/Build/Mac/Dollar.framework.dSYM; sourceTree = "<group>"; };
+		0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
+		0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReSwift.framework.dSYM; path = Carthage/Build/Mac/ReSwift.framework.dSYM; sourceTree = "<group>"; };
+		0474A0D01FA9A95E00A58F10 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		0474A0D21FA9A9AF00A58F10 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		0474A0D41FA9AB5600A58F10 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0474A0D61FA9AE0300A58F10 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
+		0484F3D81FA84A1C00083721 /* MessagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewController.swift; sourceTree = "<group>"; };
+		0484F3E21FA855F500083721 /* MessageCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewItem.swift; sourceTree = "<group>"; };
+		0484F3E31FA855F500083721 /* MessageCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewItem.xib; sourceTree = "<group>"; };
+		048E59A11FA9A6D8008B81A5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		049C1DA01FAAF793002AA563 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		049C1DA21FAAFB5B002AA563 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
+		049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEvent.swift; sourceTree = "<group>"; };
+		049C1DAA1FAB004A002AA563 /* LoadMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessages.swift; sourceTree = "<group>"; };
+		04F4C2C31FA82AD900885250 /* jlack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jlack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F4C2C61FA82AD900885250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04F4C2CA1FA82AD900885250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04F4C2CD1FA82AD900885250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04F4C2CF1FA82AD900885250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F4C2D01FA82AD900885250 /* jlack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = jlack.entitlements; sourceTree = "<group>"; };
+		04F4C2D51FA82AD900885250 /* jlackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jlackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F4C2D91FA82AD900885250 /* jlackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jlackTests.swift; sourceTree = "<group>"; };
+		04F4C2DB1FA82AD900885250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKRTMAPI.framework; path = Carthage/Build/Mac/SKRTMAPI.framework; sourceTree = "<group>"; };
+		04F4C2ED1FA8441700885250 /* SKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKCore.framework; path = Carthage/Build/Mac/SKCore.framework; sourceTree = "<group>"; };
+		04F4C2EE1FA8441800885250 /* SKWebAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKWebAPI.framework; path = Carthage/Build/Mac/SKWebAPI.framework; sourceTree = "<group>"; };
+		04F4C2EF1FA8441800885250 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/Mac/Starscream.framework; sourceTree = "<group>"; };
+		04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Starscream.framework.dSYM; path = Carthage/Build/Mac/Starscream.framework.dSYM; sourceTree = "<group>"; };
+		04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKRTMAPI.framework.dSYM; path = Carthage/Build/Mac/SKRTMAPI.framework.dSYM; sourceTree = "<group>"; };
+		04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKWebAPI.framework.dSYM; path = Carthage/Build/Mac/SKWebAPI.framework.dSYM; sourceTree = "<group>"; };
+		04F4C2FD1FA8444100885250 /* SKCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = SKCore.framework.dSYM; sourceTree = "<group>"; };
+		04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOpenViewController.swift; sourceTree = "<group>"; };
+		04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		04FE9C651FAADC3A001B2CCE /* KeyboardListeningWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListeningWindow.swift; sourceTree = "<group>"; };
+		04FE9C671FAAE31C001B2CCE /* KeyIgnoringTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyIgnoringTextView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04F4C2C01FA82AD900885250 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F4C2F01FA8441800885250 /* SKRTMAPI.framework in Frameworks */,
+				04F4C2F61FA8441800885250 /* Starscream.framework in Frameworks */,
+				04264C1E1FAA383E007D58E2 /* Dollar.framework in Frameworks */,
+				04F4C2F41FA8441800885250 /* SKWebAPI.framework in Frameworks */,
+				0474A0CC1FA9A75D00A58F10 /* ReSwift.framework in Frameworks */,
+				04F4C2F21FA8441800885250 /* SKCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F4C2D21FA82AD900885250 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		048E59A31FA9A6F9008B81A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		049C1D9E1FAAEBDB002AA563 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				0474A0D21FA9A9AF00A58F10 /* AppStore.swift */,
+				048E59A11FA9A6D8008B81A5 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		049C1D9F1FAAEBF0002AA563 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				0474A0D61FA9AE0300A58F10 /* AppActions.swift */,
+				049C1DA21FAAFB5B002AA563 /* Login.swift */,
+				049C1DAA1FAB004A002AA563 /* LoadMessages.swift */,
+				049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		04F4C2BA1FA82AD900885250 = {
+			isa = PBXGroup;
+			children = (
+				04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */,
+				0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */,
+				04F4C2FD1FA8444100885250 /* SKCore.framework.dSYM */,
+				04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */,
+				04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */,
+				04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */,
+				04264C1D1FAA383E007D58E2 /* Dollar.framework */,
+				0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */,
+				04F4C2ED1FA8441700885250 /* SKCore.framework */,
+				04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */,
+				04F4C2EE1FA8441800885250 /* SKWebAPI.framework */,
+				04F4C2EF1FA8441800885250 /* Starscream.framework */,
+				04F4C2C51FA82AD900885250 /* jlack */,
+				04F4C2D81FA82AD900885250 /* jlackTests */,
+				04F4C2C41FA82AD900885250 /* Products */,
+				048E59A31FA9A6F9008B81A5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04F4C2C41FA82AD900885250 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04F4C2C31FA82AD900885250 /* jlack.app */,
+				04F4C2D51FA82AD900885250 /* jlackTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04F4C2C51FA82AD900885250 /* jlack */ = {
+			isa = PBXGroup;
+			children = (
+				04F4C2C61FA82AD900885250 /* AppDelegate.swift */,
+				04FE9C651FAADC3A001B2CCE /* KeyboardListeningWindow.swift */,
+				04FE9C671FAAE31C001B2CCE /* KeyIgnoringTextView.swift */,
+				049C1D9E1FAAEBDB002AA563 /* State */,
+				0474A0D01FA9A95E00A58F10 /* AppReducer.swift */,
+				049C1D9F1FAAEBF0002AA563 /* Actions */,
+				0474A0D41FA9AB5600A58F10 /* Settings.swift */,
+				04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */,
+				0484F3D81FA84A1C00083721 /* MessagesCollectionViewController.swift */,
+				049C1DA01FAAF793002AA563 /* LoginViewController.swift */,
+				04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */,
+				04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */,
+				049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */,
+				04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */,
+				0484F3E21FA855F500083721 /* MessageCollectionViewItem.swift */,
+				0484F3E31FA855F500083721 /* MessageCollectionViewItem.xib */,
+				04F4C2CA1FA82AD900885250 /* Assets.xcassets */,
+				04F4C2CC1FA82AD900885250 /* Main.storyboard */,
+				04F4C2CF1FA82AD900885250 /* Info.plist */,
+				04F4C2D01FA82AD900885250 /* jlack.entitlements */,
+			);
+			path = jlack;
+			sourceTree = "<group>";
+		};
+		04F4C2D81FA82AD900885250 /* jlackTests */ = {
+			isa = PBXGroup;
+			children = (
+				04F4C2D91FA82AD900885250 /* jlackTests.swift */,
+				04F4C2DB1FA82AD900885250 /* Info.plist */,
+			);
+			path = jlackTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04F4C2C21FA82AD900885250 /* jlack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F4C2DE1FA82AD900885250 /* Build configuration list for PBXNativeTarget "jlack" */;
+			buildPhases = (
+				04F4C2BF1FA82AD900885250 /* Sources */,
+				04F4C2C01FA82AD900885250 /* Frameworks */,
+				04F4C2C11FA82AD900885250 /* Resources */,
+				04F4C2F81FA8441800885250 /* Embed Frameworks */,
+				04F4C2F91FA8442C00885250 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jlack;
+			productName = jlack;
+			productReference = 04F4C2C31FA82AD900885250 /* jlack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04F4C2D41FA82AD900885250 /* jlackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F4C2E11FA82AD900885250 /* Build configuration list for PBXNativeTarget "jlackTests" */;
+			buildPhases = (
+				04F4C2D11FA82AD900885250 /* Sources */,
+				04F4C2D21FA82AD900885250 /* Frameworks */,
+				04F4C2D31FA82AD900885250 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04F4C2D71FA82AD900885250 /* PBXTargetDependency */,
+			);
+			name = jlackTests;
+			productName = jlackTests;
+			productReference = 04F4C2D51FA82AD900885250 /* jlackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04F4C2BB1FA82AD900885250 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Jack Flintermann";
+				TargetAttributes = {
+					04F4C2C21FA82AD900885250 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					04F4C2D41FA82AD900885250 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 04F4C2C21FA82AD900885250;
+					};
+				};
+			};
+			buildConfigurationList = 04F4C2BE1FA82AD900885250 /* Build configuration list for PBXProject "jlack" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04F4C2BA1FA82AD900885250;
+			productRefGroup = 04F4C2C41FA82AD900885250 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04F4C2C21FA82AD900885250 /* jlack */,
+				04F4C2D41FA82AD900885250 /* jlackTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04F4C2C11FA82AD900885250 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F4C2CB1FA82AD900885250 /* Assets.xcassets in Resources */,
+				0484F3E51FA855F500083721 /* MessageCollectionViewItem.xib in Resources */,
+				04F4C2CE1FA82AD900885250 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F4C2D31FA82AD900885250 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04F4C2BF1FA82AD900885250 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0484F3D91FA84A1C00083721 /* MessagesCollectionViewController.swift in Sources */,
+				049C1DAB1FAB004A002AA563 /* LoadMessages.swift in Sources */,
+				049C1DA31FAAFB5B002AA563 /* Login.swift in Sources */,
+				0474A0D71FA9AE0300A58F10 /* AppActions.swift in Sources */,
+				04FE9C621FAABB02001B2CCE /* QuickOpenViewController.swift in Sources */,
+				04264C1C1FAA2E6D007D58E2 /* SlackRTMWrapper.swift in Sources */,
+				04FE9C681FAAE31C001B2CCE /* KeyIgnoringTextView.swift in Sources */,
+				04FE9C661FAADC3A001B2CCE /* KeyboardListeningWindow.swift in Sources */,
+				049C1DA91FAAFF2E002AA563 /* KeyEvent.swift in Sources */,
+				049C1DA61FAAFE25002AA563 /* SidebarViewController.swift in Sources */,
+				0484F3E41FA855F500083721 /* MessageCollectionViewItem.swift in Sources */,
+				04F4C2C71FA82AD900885250 /* AppDelegate.swift in Sources */,
+				0474A0D51FA9AB5600A58F10 /* Settings.swift in Sources */,
+				0474A0D31FA9A9AF00A58F10 /* AppStore.swift in Sources */,
+				04FE9C641FAAC6DE001B2CCE /* SplitViewController.swift in Sources */,
+				049C1DA11FAAF793002AA563 /* LoginViewController.swift in Sources */,
+				04FE9C601FAAB9B2001B2CCE /* MainContainerViewController.swift in Sources */,
+				0474A0D11FA9A95E00A58F10 /* AppReducer.swift in Sources */,
+				048E59A21FA9A6D8008B81A5 /* AppState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F4C2D11FA82AD900885250 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F4C2DA1FA82AD900885250 /* jlackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04F4C2D71FA82AD900885250 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04F4C2C21FA82AD900885250 /* jlack */;
+			targetProxy = 04F4C2D61FA82AD900885250 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04F4C2CC1FA82AD900885250 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F4C2CD1FA82AD900885250 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04F4C2DC1FA82AD900885250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04F4C2DD1FA82AD900885250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		04F4C2DF1FA82AD900885250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = jlack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jflinter.jlack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		04F4C2E01FA82AD900885250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = jlack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jflinter.jlack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		04F4C2E21FA82AD900885250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = jlackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jflinter.jlackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jlack.app/Contents/MacOS/jlack";
+			};
+			name = Debug;
+		};
+		04F4C2E31FA82AD900885250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = jlackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jflinter.jlackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jlack.app/Contents/MacOS/jlack";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04F4C2BE1FA82AD900885250 /* Build configuration list for PBXProject "jlack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F4C2DC1FA82AD900885250 /* Debug */,
+				04F4C2DD1FA82AD900885250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F4C2DE1FA82AD900885250 /* Build configuration list for PBXNativeTarget "jlack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F4C2DF1FA82AD900885250 /* Debug */,
+				04F4C2E01FA82AD900885250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F4C2E11FA82AD900885250 /* Build configuration list for PBXNativeTarget "jlackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F4C2E21FA82AD900885250 /* Debug */,
+				04F4C2E31FA82AD900885250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04F4C2BB1FA82AD900885250 /* Project object */;
+}
