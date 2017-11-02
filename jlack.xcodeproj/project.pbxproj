@@ -11,6 +11,7 @@
 		04264C1E1FAA383E007D58E2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264C1D1FAA383E007D58E2 /* Dollar.framework */; };
 		04264C1F1FAA383E007D58E2 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04264C1D1FAA383E007D58E2 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04264C211FAA3849007D58E2 /* Dollar.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */; };
+		042E446A1FABC4F6008460C6 /* SKCore.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 042E44691FABC4F6008460C6 /* SKCore.framework.dSYM */; };
 		0474A0CC1FA9A75D00A58F10 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */; };
 		0474A0CD1FA9A75D00A58F10 /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0474A0CF1FA9A77300A58F10 /* ReSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */; };
@@ -42,7 +43,6 @@
 		04F4C2FE1FA8444100885250 /* Starscream.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */; };
 		04F4C2FF1FA8444100885250 /* SKRTMAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */; };
 		04F4C3001FA8444100885250 /* SKWebAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */; };
-		04F4C3011FA8444100885250 /* SKCore.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FD1FA8444100885250 /* SKCore.framework.dSYM */; };
 		04FE9C601FAAB9B2001B2CCE /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */; };
 		04FE9C621FAABB02001B2CCE /* QuickOpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */; };
 		04FE9C641FAAC6DE001B2CCE /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */; };
@@ -87,8 +87,8 @@
 				04F4C2FE1FA8444100885250 /* Starscream.framework.dSYM in CopyFiles */,
 				04F4C2FF1FA8444100885250 /* SKRTMAPI.framework.dSYM in CopyFiles */,
 				04F4C3001FA8444100885250 /* SKWebAPI.framework.dSYM in CopyFiles */,
-				04F4C3011FA8444100885250 /* SKCore.framework.dSYM in CopyFiles */,
 				04264C211FAA3849007D58E2 /* Dollar.framework.dSYM in CopyFiles */,
+				042E446A1FABC4F6008460C6 /* SKCore.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +98,7 @@
 		04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackRTMWrapper.swift; sourceTree = "<group>"; };
 		04264C1D1FAA383E007D58E2 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/Mac/Dollar.framework; sourceTree = "<group>"; };
 		04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Dollar.framework.dSYM; path = Carthage/Build/Mac/Dollar.framework.dSYM; sourceTree = "<group>"; };
+		042E44691FABC4F6008460C6 /* SKCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKCore.framework.dSYM; path = Carthage/Build/Mac/SKCore.framework.dSYM; sourceTree = "<group>"; };
 		0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReSwift.framework.dSYM; path = Carthage/Build/Mac/ReSwift.framework.dSYM; sourceTree = "<group>"; };
 		0474A0D01FA9A95E00A58F10 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -129,7 +130,6 @@
 		04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Starscream.framework.dSYM; path = Carthage/Build/Mac/Starscream.framework.dSYM; sourceTree = "<group>"; };
 		04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKRTMAPI.framework.dSYM; path = Carthage/Build/Mac/SKRTMAPI.framework.dSYM; sourceTree = "<group>"; };
 		04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKWebAPI.framework.dSYM; path = Carthage/Build/Mac/SKWebAPI.framework.dSYM; sourceTree = "<group>"; };
-		04F4C2FD1FA8444100885250 /* SKCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = SKCore.framework.dSYM; sourceTree = "<group>"; };
 		04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
 		04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOpenViewController.swift; sourceTree = "<group>"; };
 		04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -191,9 +191,9 @@
 		04F4C2BA1FA82AD900885250 = {
 			isa = PBXGroup;
 			children = (
+				042E44691FABC4F6008460C6 /* SKCore.framework.dSYM */,
 				04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */,
 				0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */,
-				04F4C2FD1FA8444100885250 /* SKCore.framework.dSYM */,
 				04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */,
 				04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */,
 				04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */,
