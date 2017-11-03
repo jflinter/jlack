@@ -12,7 +12,7 @@ import ReSwift
 class KeyboardListeningWindow: NSWindow {
 
     override func keyDown(with event: NSEvent) {
-        if let action = AppActions.fromEvent(event) {
+        if let action = AppActionz.fromEvent(event) {
             AppStore.shared.dispatch(action)
         } else {
             super.keyDown(with: event)

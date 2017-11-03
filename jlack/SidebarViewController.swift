@@ -17,6 +17,6 @@ class SidebarViewController: NSViewController {
     
     // TODO move me somewhere else; don't forget to update the bottom constraint on the outline view in the storyboard
     @IBAction func logoutPressed(_ sender: Any) {
-        AppStore.shared.dispatch(AppActions.logout)
+        AppStore.shared.dispatch(AppActionz.logout())
     }
 }

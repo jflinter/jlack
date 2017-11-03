@@ -9,7 +9,15 @@
 import ReSwift
 import Cocoa
 
-extension AppActions {
+fileprivate struct CmdTAction: AppAction {
+    var type: AppActionType { return .pushedCommandT }
+}
+
+fileprivate struct EscAction: AppAction {
+    var type: AppActionType { return .pushedEsc }
+}
+
+extension AppActionz {
     static func fromEvent(_ event: NSEvent) -> Action? {
         let tKeyCode = 17
         let escKeyCode = 53
@@ -23,10 +31,10 @@ extension AppActions {
         }
         
         if isCommandT(event) {
-            return AppActions.pushedCommandT
+            return CmdTAction()
         }
         if isEsc(event) {
-            return AppActions.pushedEsc
+            return EscAction()
         }
         return nil
     }

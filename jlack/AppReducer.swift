@@ -18,8 +18,8 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 }
 
 func quickLookReducer(action: Action, state: Bool) -> Bool {
-    guard let action = action as? AppActions else { return state }
-    switch action {
+    guard let action = action as? AppAction else { return state }
+    switch action.type {
     case .pushedCommandT:
         return !state
     case .pushedEsc:
@@ -32,8 +32,8 @@ func quickLookReducer(action: Action, state: Bool) -> Bool {
 }
 
 func accessTokenReducer(action: Action, state: String?) -> String? {
-    guard let action = action as? AppActions else { return state }
-    switch action {
+    guard let action = action as? AppAction else { return state }
+    switch action.type {
     case .authenticated(let accessToken):
         return accessToken
     case .logout:
@@ -44,12 +44,38 @@ func accessTokenReducer(action: Action, state: String?) -> String? {
 }
 
 func messageReducer(action: Action, state: [Message]) -> [Message] {
-    guard let action = action as? AppActions else { return state }
-    switch action {
-    case .loadedMessages(let messages):
-        return `$`.uniq(state + messages, by: { $0.id }).sorted(by: { $0.timestamp < $1.timestamp })
+    guard let action = action as? AppAction else { return state }
+    switch action.type {
+    case .loadedMessages(let result):
+        switch result {
+        case .success(let messages):
+            return `$`.uniq(state + messages, by: { $0.timestamp }).sorted(by: { $0.timestamp < $1.timestamp })
+        case .failure(_):
+            return [] // TODO figure out errors
+        }
+    case .sendMessage(let text, let temporaryId):
+        // TODO this is hacky - i'm trying to get messages into a stable sort order
+        // so that if we send a message, then a new message is received before ours is confirmed,
+        // we can still sort the whole array of messages and get the correct order.
+        let tmpTimestamp = (state.last?.timestamp ?? "") + "$"
+        let message = Message(text: text, timestamp: tmpTimestamp, temporaryId: temporaryId)
+        return state + [message]
+    case .messageAcknowledged(let result):
+        switch result {
+        case .success(let timestampAndTemporaryId):
+            // loop through messages, convert temp message into a real one
+            return state.map { message in
+                if message.temporaryId == timestampAndTemporaryId.temporaryId {
+                    return Message(text: message.text, timestamp: timestampAndTemporaryId.timestamp)
+                }
+                return message
+            }
+        case .failure(let error): // TODO show an alert or something
+            // loop through messages, remove the one that failed to send
+            return state.filter { $0.temporaryId == error.temporaryId }
+        }
     case .receivedMessage(let message):
-        return `$`.uniq(state + [message], by: { $0.id }).sorted(by: { $0.timestamp < $1.timestamp })
+        return `$`.uniq(state + [message], by: { $0.timestamp }).sorted(by: { $0.timestamp < $1.timestamp })
     case .logout:
         return []
     default:

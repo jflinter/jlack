@@ -1,4 +1,0 @@
-framework module SKWebAPI {
-    header "SKWebAPI-Swift.h"
-    requires objc
-}

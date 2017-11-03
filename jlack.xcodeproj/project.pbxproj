@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041577B41FABE17100F581F3 /* TextEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041577B31FABE17100F581F3 /* TextEditorViewController.swift */; };
+		041577B61FAC140800F581F3 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041577B51FAC140800F581F3 /* Messages.swift */; };
+		041577C51FAC1F5200F581F3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041577BD1FAC1F5100F581F3 /* Result.framework */; };
+		041577C61FAC1F5200F581F3 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041577BD1FAC1F5100F581F3 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		041577C91FAC1F5200F581F3 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041577BF1FAC1F5100F581F3 /* SKWebAPI.framework */; };
+		041577CA1FAC1F5200F581F3 /* SKWebAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041577BF1FAC1F5100F581F3 /* SKWebAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		041577CB1FAC1F5200F581F3 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041577C01FAC1F5100F581F3 /* Starscream.framework */; };
+		041577CC1FAC1F5200F581F3 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041577C01FAC1F5100F581F3 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		041577CD1FAC1F5200F581F3 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041577C11FAC1F5100F581F3 /* Dollar.framework */; };
+		041577CE1FAC1F5200F581F3 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041577C11FAC1F5100F581F3 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		041577CF1FAC1F5200F581F3 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041577C21FAC1F5100F581F3 /* ReSwift.framework */; };
+		041577D01FAC1F5200F581F3 /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041577C21FAC1F5100F581F3 /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		041577D91FAC1F6B00F581F3 /* Dollar.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 041577D21FAC1F6900F581F3 /* Dollar.framework.dSYM */; };
+		041577DC1FAC1F6B00F581F3 /* Result.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 041577D51FAC1F6900F581F3 /* Result.framework.dSYM */; };
+		041577DD1FAC1F6B00F581F3 /* Starscream.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 041577D61FAC1F6A00F581F3 /* Starscream.framework.dSYM */; };
+		041577DE1FAC1F6B00F581F3 /* ReSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 041577D71FAC1F6A00F581F3 /* ReSwift.framework.dSYM */; };
+		041577DF1FAC1F6B00F581F3 /* SKWebAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 041577D81FAC1F6A00F581F3 /* SKWebAPI.framework.dSYM */; };
+		041577E21FAC207700F581F3 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041577E11FAC207700F581F3 /* APIErrors.swift */; };
 		04264C1C1FAA2E6D007D58E2 /* SlackRTMWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */; };
-		04264C1E1FAA383E007D58E2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264C1D1FAA383E007D58E2 /* Dollar.framework */; };
-		04264C1F1FAA383E007D58E2 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04264C1D1FAA383E007D58E2 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04264C211FAA3849007D58E2 /* Dollar.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */; };
-		042E446A1FABC4F6008460C6 /* SKCore.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 042E44691FABC4F6008460C6 /* SKCore.framework.dSYM */; };
-		0474A0CC1FA9A75D00A58F10 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */; };
-		0474A0CD1FA9A75D00A58F10 /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0474A0CF1FA9A77300A58F10 /* ReSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */; };
 		0474A0D11FA9A95E00A58F10 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D01FA9A95E00A58F10 /* AppReducer.swift */; };
 		0474A0D31FA9A9AF00A58F10 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D21FA9A9AF00A58F10 /* AppStore.swift */; };
 		0474A0D51FA9AB5600A58F10 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D41FA9AB5600A58F10 /* Settings.swift */; };
@@ -24,30 +35,22 @@
 		0484F3E51FA855F500083721 /* MessageCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484F3E31FA855F500083721 /* MessageCollectionViewItem.xib */; };
 		048E59A21FA9A6D8008B81A5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E59A11FA9A6D8008B81A5 /* AppState.swift */; };
 		049C1DA11FAAF793002AA563 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA01FAAF793002AA563 /* LoginViewController.swift */; };
-		049C1DA31FAAFB5B002AA563 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA21FAAFB5B002AA563 /* Login.swift */; };
+		049C1DA31FAAFB5B002AA563 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA21FAAFB5B002AA563 /* Authentication.swift */; };
 		049C1DA61FAAFE25002AA563 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */; };
 		049C1DA91FAAFF2E002AA563 /* KeyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */; };
-		049C1DAB1FAB004A002AA563 /* LoadMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DAA1FAB004A002AA563 /* LoadMessages.swift */; };
+		04DC80A21FAC5D24002D2093 /* SKRTMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC80A11FAC5D24002D2093 /* SKRTMAPI.swift */; };
 		04F4C2C71FA82AD900885250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C2C61FA82AD900885250 /* AppDelegate.swift */; };
 		04F4C2CB1FA82AD900885250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F4C2CA1FA82AD900885250 /* Assets.xcassets */; };
 		04F4C2CE1FA82AD900885250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F4C2CC1FA82AD900885250 /* Main.storyboard */; };
 		04F4C2DA1FA82AD900885250 /* jlackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C2D91FA82AD900885250 /* jlackTests.swift */; };
-		04F4C2F01FA8441800885250 /* SKRTMAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */; };
-		04F4C2F11FA8441800885250 /* SKRTMAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04F4C2F21FA8441800885250 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2ED1FA8441700885250 /* SKCore.framework */; };
-		04F4C2F31FA8441800885250 /* SKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2ED1FA8441700885250 /* SKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04F4C2F41FA8441800885250 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EE1FA8441800885250 /* SKWebAPI.framework */; };
-		04F4C2F51FA8441800885250 /* SKWebAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EE1FA8441800885250 /* SKWebAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04F4C2F61FA8441800885250 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EF1FA8441800885250 /* Starscream.framework */; };
-		04F4C2F71FA8441800885250 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F4C2EF1FA8441800885250 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04F4C2FE1FA8444100885250 /* Starscream.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */; };
-		04F4C2FF1FA8444100885250 /* SKRTMAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */; };
-		04F4C3001FA8444100885250 /* SKWebAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */; };
 		04FE9C601FAAB9B2001B2CCE /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */; };
 		04FE9C621FAABB02001B2CCE /* QuickOpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */; };
 		04FE9C641FAAC6DE001B2CCE /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */; };
 		04FE9C661FAADC3A001B2CCE /* KeyboardListeningWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C651FAADC3A001B2CCE /* KeyboardListeningWindow.swift */; };
 		04FE9C681FAAE31C001B2CCE /* KeyIgnoringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE9C671FAAE31C001B2CCE /* KeyIgnoringTextView.swift */; };
+		04FEC0B61FAC63C700FBF049 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FEC0B51FAC63C700FBF049 /* SKCore.framework */; };
+		04FEC0B71FAC63C700FBF049 /* SKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04FEC0B51FAC63C700FBF049 /* SKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04FEC0B91FAC63D800FBF049 /* SKCore.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04FEC0B81FAC63D800FBF049 /* SKCore.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,18 +64,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		04F4C2F81FA8441800885250 /* Embed Frameworks */ = {
+		041577D11FAC1F5200F581F3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				04F4C2F11FA8441800885250 /* SKRTMAPI.framework in Embed Frameworks */,
-				04F4C2F71FA8441800885250 /* Starscream.framework in Embed Frameworks */,
-				04264C1F1FAA383E007D58E2 /* Dollar.framework in Embed Frameworks */,
-				04F4C2F51FA8441800885250 /* SKWebAPI.framework in Embed Frameworks */,
-				0474A0CD1FA9A75D00A58F10 /* ReSwift.framework in Embed Frameworks */,
-				04F4C2F31FA8441800885250 /* SKCore.framework in Embed Frameworks */,
+				041577D01FAC1F5200F581F3 /* ReSwift.framework in Embed Frameworks */,
+				041577CA1FAC1F5200F581F3 /* SKWebAPI.framework in Embed Frameworks */,
+				041577CE1FAC1F5200F581F3 /* Dollar.framework in Embed Frameworks */,
+				041577C61FAC1F5200F581F3 /* Result.framework in Embed Frameworks */,
+				041577CC1FAC1F5200F581F3 /* Starscream.framework in Embed Frameworks */,
+				04FEC0B71FAC63C700FBF049 /* SKCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,24 +86,32 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				0474A0CF1FA9A77300A58F10 /* ReSwift.framework.dSYM in CopyFiles */,
-				04F4C2FE1FA8444100885250 /* Starscream.framework.dSYM in CopyFiles */,
-				04F4C2FF1FA8444100885250 /* SKRTMAPI.framework.dSYM in CopyFiles */,
-				04F4C3001FA8444100885250 /* SKWebAPI.framework.dSYM in CopyFiles */,
-				04264C211FAA3849007D58E2 /* Dollar.framework.dSYM in CopyFiles */,
-				042E446A1FABC4F6008460C6 /* SKCore.framework.dSYM in CopyFiles */,
+				041577D91FAC1F6B00F581F3 /* Dollar.framework.dSYM in CopyFiles */,
+				04FEC0B91FAC63D800FBF049 /* SKCore.framework.dSYM in CopyFiles */,
+				041577DC1FAC1F6B00F581F3 /* Result.framework.dSYM in CopyFiles */,
+				041577DD1FAC1F6B00F581F3 /* Starscream.framework.dSYM in CopyFiles */,
+				041577DE1FAC1F6B00F581F3 /* ReSwift.framework.dSYM in CopyFiles */,
+				041577DF1FAC1F6B00F581F3 /* SKWebAPI.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		041577B31FABE17100F581F3 /* TextEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorViewController.swift; sourceTree = "<group>"; };
+		041577B51FAC140800F581F3 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		041577BD1FAC1F5100F581F3 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		041577BF1FAC1F5100F581F3 /* SKWebAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKWebAPI.framework; path = Carthage/Build/Mac/SKWebAPI.framework; sourceTree = "<group>"; };
+		041577C01FAC1F5100F581F3 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/Mac/Starscream.framework; sourceTree = "<group>"; };
+		041577C11FAC1F5100F581F3 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/Mac/Dollar.framework; sourceTree = "<group>"; };
+		041577C21FAC1F5100F581F3 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
+		041577D21FAC1F6900F581F3 /* Dollar.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Dollar.framework.dSYM; path = Carthage/Build/Mac/Dollar.framework.dSYM; sourceTree = "<group>"; };
+		041577D51FAC1F6900F581F3 /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/Mac/Result.framework.dSYM; sourceTree = "<group>"; };
+		041577D61FAC1F6A00F581F3 /* Starscream.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Starscream.framework.dSYM; path = Carthage/Build/Mac/Starscream.framework.dSYM; sourceTree = "<group>"; };
+		041577D71FAC1F6A00F581F3 /* ReSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReSwift.framework.dSYM; path = Carthage/Build/Mac/ReSwift.framework.dSYM; sourceTree = "<group>"; };
+		041577D81FAC1F6A00F581F3 /* SKWebAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKWebAPI.framework.dSYM; path = Carthage/Build/Mac/SKWebAPI.framework.dSYM; sourceTree = "<group>"; };
+		041577E11FAC207700F581F3 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackRTMWrapper.swift; sourceTree = "<group>"; };
-		04264C1D1FAA383E007D58E2 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/Mac/Dollar.framework; sourceTree = "<group>"; };
-		04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Dollar.framework.dSYM; path = Carthage/Build/Mac/Dollar.framework.dSYM; sourceTree = "<group>"; };
-		042E44691FABC4F6008460C6 /* SKCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKCore.framework.dSYM; path = Carthage/Build/Mac/SKCore.framework.dSYM; sourceTree = "<group>"; };
-		0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
-		0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReSwift.framework.dSYM; path = Carthage/Build/Mac/ReSwift.framework.dSYM; sourceTree = "<group>"; };
 		0474A0D01FA9A95E00A58F10 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		0474A0D21FA9A9AF00A58F10 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		0474A0D41FA9AB5600A58F10 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -110,10 +121,10 @@
 		0484F3E31FA855F500083721 /* MessageCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewItem.xib; sourceTree = "<group>"; };
 		048E59A11FA9A6D8008B81A5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		049C1DA01FAAF793002AA563 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		049C1DA21FAAFB5B002AA563 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		049C1DA21FAAFB5B002AA563 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEvent.swift; sourceTree = "<group>"; };
-		049C1DAA1FAB004A002AA563 /* LoadMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessages.swift; sourceTree = "<group>"; };
+		04DC80A11FAC5D24002D2093 /* SKRTMAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKRTMAPI.swift; sourceTree = "<group>"; };
 		04F4C2C31FA82AD900885250 /* jlack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jlack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F4C2C61FA82AD900885250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F4C2CA1FA82AD900885250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,18 +134,13 @@
 		04F4C2D51FA82AD900885250 /* jlackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jlackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F4C2D91FA82AD900885250 /* jlackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jlackTests.swift; sourceTree = "<group>"; };
 		04F4C2DB1FA82AD900885250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKRTMAPI.framework; path = Carthage/Build/Mac/SKRTMAPI.framework; sourceTree = "<group>"; };
-		04F4C2ED1FA8441700885250 /* SKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKCore.framework; path = Carthage/Build/Mac/SKCore.framework; sourceTree = "<group>"; };
-		04F4C2EE1FA8441800885250 /* SKWebAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKWebAPI.framework; path = Carthage/Build/Mac/SKWebAPI.framework; sourceTree = "<group>"; };
-		04F4C2EF1FA8441800885250 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/Mac/Starscream.framework; sourceTree = "<group>"; };
-		04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Starscream.framework.dSYM; path = Carthage/Build/Mac/Starscream.framework.dSYM; sourceTree = "<group>"; };
-		04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKRTMAPI.framework.dSYM; path = Carthage/Build/Mac/SKRTMAPI.framework.dSYM; sourceTree = "<group>"; };
-		04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKWebAPI.framework.dSYM; path = Carthage/Build/Mac/SKWebAPI.framework.dSYM; sourceTree = "<group>"; };
 		04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
 		04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOpenViewController.swift; sourceTree = "<group>"; };
 		04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		04FE9C651FAADC3A001B2CCE /* KeyboardListeningWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListeningWindow.swift; sourceTree = "<group>"; };
 		04FE9C671FAAE31C001B2CCE /* KeyIgnoringTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyIgnoringTextView.swift; sourceTree = "<group>"; };
+		04FEC0B51FAC63C700FBF049 /* SKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKCore.framework; path = Carthage/Build/Mac/SKCore.framework; sourceTree = "<group>"; };
+		04FEC0B81FAC63D800FBF049 /* SKCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKCore.framework.dSYM; path = Carthage/Build/Mac/SKCore.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,12 +148,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F4C2F01FA8441800885250 /* SKRTMAPI.framework in Frameworks */,
-				04F4C2F61FA8441800885250 /* Starscream.framework in Frameworks */,
-				04264C1E1FAA383E007D58E2 /* Dollar.framework in Frameworks */,
-				04F4C2F41FA8441800885250 /* SKWebAPI.framework in Frameworks */,
-				0474A0CC1FA9A75D00A58F10 /* ReSwift.framework in Frameworks */,
-				04F4C2F21FA8441800885250 /* SKCore.framework in Frameworks */,
+				041577CF1FAC1F5200F581F3 /* ReSwift.framework in Frameworks */,
+				041577C91FAC1F5200F581F3 /* SKWebAPI.framework in Frameworks */,
+				041577CD1FAC1F5200F581F3 /* Dollar.framework in Frameworks */,
+				041577C51FAC1F5200F581F3 /* Result.framework in Frameworks */,
+				041577CB1FAC1F5200F581F3 /* Starscream.framework in Frameworks */,
+				04FEC0B61FAC63C700FBF049 /* SKCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,9 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				0474A0D61FA9AE0300A58F10 /* AppActions.swift */,
-				049C1DA21FAAFB5B002AA563 /* Login.swift */,
-				049C1DAA1FAB004A002AA563 /* LoadMessages.swift */,
+				049C1DA21FAAFB5B002AA563 /* Authentication.swift */,
 				049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */,
+				041577B51FAC140800F581F3 /* Messages.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -191,18 +197,18 @@
 		04F4C2BA1FA82AD900885250 = {
 			isa = PBXGroup;
 			children = (
-				042E44691FABC4F6008460C6 /* SKCore.framework.dSYM */,
-				04264C201FAA3849007D58E2 /* Dollar.framework.dSYM */,
-				0474A0CE1FA9A77300A58F10 /* ReSwift.framework.dSYM */,
-				04F4C2FB1FA8444100885250 /* SKRTMAPI.framework.dSYM */,
-				04F4C2FC1FA8444100885250 /* SKWebAPI.framework.dSYM */,
-				04F4C2FA1FA8444100885250 /* Starscream.framework.dSYM */,
-				04264C1D1FAA383E007D58E2 /* Dollar.framework */,
-				0474A0CB1FA9A75D00A58F10 /* ReSwift.framework */,
-				04F4C2ED1FA8441700885250 /* SKCore.framework */,
-				04F4C2EC1FA8441700885250 /* SKRTMAPI.framework */,
-				04F4C2EE1FA8441800885250 /* SKWebAPI.framework */,
-				04F4C2EF1FA8441800885250 /* Starscream.framework */,
+				04FEC0B81FAC63D800FBF049 /* SKCore.framework.dSYM */,
+				04FEC0B51FAC63C700FBF049 /* SKCore.framework */,
+				041577D21FAC1F6900F581F3 /* Dollar.framework.dSYM */,
+				041577D51FAC1F6900F581F3 /* Result.framework.dSYM */,
+				041577D71FAC1F6A00F581F3 /* ReSwift.framework.dSYM */,
+				041577D81FAC1F6A00F581F3 /* SKWebAPI.framework.dSYM */,
+				041577D61FAC1F6A00F581F3 /* Starscream.framework.dSYM */,
+				041577C11FAC1F5100F581F3 /* Dollar.framework */,
+				041577BD1FAC1F5100F581F3 /* Result.framework */,
+				041577C21FAC1F5100F581F3 /* ReSwift.framework */,
+				041577BF1FAC1F5100F581F3 /* SKWebAPI.framework */,
+				041577C01FAC1F5100F581F3 /* Starscream.framework */,
 				04F4C2C51FA82AD900885250 /* jlack */,
 				04F4C2D81FA82AD900885250 /* jlackTests */,
 				04F4C2C41FA82AD900885250 /* Products */,
@@ -222,11 +228,13 @@
 		04F4C2C51FA82AD900885250 /* jlack */ = {
 			isa = PBXGroup;
 			children = (
+				04DC80A11FAC5D24002D2093 /* SKRTMAPI.swift */,
 				04F4C2C61FA82AD900885250 /* AppDelegate.swift */,
 				04FE9C651FAADC3A001B2CCE /* KeyboardListeningWindow.swift */,
 				04FE9C671FAAE31C001B2CCE /* KeyIgnoringTextView.swift */,
 				049C1D9E1FAAEBDB002AA563 /* State */,
 				0474A0D01FA9A95E00A58F10 /* AppReducer.swift */,
+				041577E11FAC207700F581F3 /* APIErrors.swift */,
 				049C1D9F1FAAEBF0002AA563 /* Actions */,
 				0474A0D41FA9AB5600A58F10 /* Settings.swift */,
 				04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */,
@@ -236,6 +244,7 @@
 				04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */,
 				049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */,
 				04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */,
+				041577B31FABE17100F581F3 /* TextEditorViewController.swift */,
 				0484F3E21FA855F500083721 /* MessageCollectionViewItem.swift */,
 				0484F3E31FA855F500083721 /* MessageCollectionViewItem.xib */,
 				04F4C2CA1FA82AD900885250 /* Assets.xcassets */,
@@ -265,8 +274,8 @@
 				04F4C2BF1FA82AD900885250 /* Sources */,
 				04F4C2C01FA82AD900885250 /* Frameworks */,
 				04F4C2C11FA82AD900885250 /* Resources */,
-				04F4C2F81FA8441800885250 /* Embed Frameworks */,
 				04F4C2F91FA8442C00885250 /* CopyFiles */,
+				041577D11FAC1F5200F581F3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,21 +370,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				0484F3D91FA84A1C00083721 /* MessagesCollectionViewController.swift in Sources */,
-				049C1DAB1FAB004A002AA563 /* LoadMessages.swift in Sources */,
-				049C1DA31FAAFB5B002AA563 /* Login.swift in Sources */,
+				049C1DA31FAAFB5B002AA563 /* Authentication.swift in Sources */,
 				0474A0D71FA9AE0300A58F10 /* AppActions.swift in Sources */,
 				04FE9C621FAABB02001B2CCE /* QuickOpenViewController.swift in Sources */,
 				04264C1C1FAA2E6D007D58E2 /* SlackRTMWrapper.swift in Sources */,
 				04FE9C681FAAE31C001B2CCE /* KeyIgnoringTextView.swift in Sources */,
 				04FE9C661FAADC3A001B2CCE /* KeyboardListeningWindow.swift in Sources */,
 				049C1DA91FAAFF2E002AA563 /* KeyEvent.swift in Sources */,
+				041577E21FAC207700F581F3 /* APIErrors.swift in Sources */,
 				049C1DA61FAAFE25002AA563 /* SidebarViewController.swift in Sources */,
+				041577B61FAC140800F581F3 /* Messages.swift in Sources */,
 				0484F3E41FA855F500083721 /* MessageCollectionViewItem.swift in Sources */,
 				04F4C2C71FA82AD900885250 /* AppDelegate.swift in Sources */,
+				041577B41FABE17100F581F3 /* TextEditorViewController.swift in Sources */,
 				0474A0D51FA9AB5600A58F10 /* Settings.swift in Sources */,
 				0474A0D31FA9A9AF00A58F10 /* AppStore.swift in Sources */,
 				04FE9C641FAAC6DE001B2CCE /* SplitViewController.swift in Sources */,
 				049C1DA11FAAF793002AA563 /* LoginViewController.swift in Sources */,
+				04DC80A21FAC5D24002D2093 /* SKRTMAPI.swift in Sources */,
 				04FE9C601FAAB9B2001B2CCE /* MainContainerViewController.swift in Sources */,
 				0474A0D11FA9A95E00A58F10 /* AppReducer.swift in Sources */,
 				048E59A21FA9A6D8008B81A5 /* AppState.swift in Sources */,

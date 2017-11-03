@@ -30,7 +30,7 @@ class Settings: StoreSubscriber {
     private init(withStore store: Store<AppState>) {
         self.store = store
         if let token = Settings.accessToken {
-            store.dispatch(AppActions.authenticated(accessToken: token))
+            store.dispatch(AppActionz.authenticated(accessToken: token))
         }
         store.subscribe(self)
     }

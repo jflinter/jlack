@@ -1,5 +1,5 @@
 //
-//  AppActions.swift
+//  AppActionz.swift
 //  jlack
 //
 //  Created by Jack Flintermann on 11/1/17.
@@ -8,15 +8,23 @@
 
 import ReSwift
 import Cocoa
+import Result
 
-enum AppActions: Action {
+enum AppActionType {
     case authenticated(accessToken: String)
     case requestedMessages
-    case loadedMessages(messages: [Message])
+    case loadedMessages(result: Result<[Message], APIError>)
     case receivedMessage(message: Message)
+    case sendMessage(text: String, temporaryId: Int)
+    case messageAcknowledged(result: Result<TimestampAndTemporaryId, MessageDeliveryError>)
     case loginPressed
     case logout
     case pushedCommandT
     case pushedEsc
 }
 
+enum AppActionz {} // will be extended with static functions.
+
+protocol AppAction: Action {
+    var type: AppActionType { get }
+}

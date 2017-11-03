@@ -23,6 +23,6 @@ class LoginViewController: NSViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
-        AppStore.shared.dispatch(AppActions.login())
+        AppStore.shared.dispatch(AppActionz.login())
     }
 }

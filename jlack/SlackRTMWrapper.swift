@@ -8,12 +8,12 @@
 
 import ReSwift
 import Foundation
-import SKRTMAPI
+import SKCore
 
 class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
     private let store: Store<AppState>
-    private var rtm: SKRTMAPI? = nil
-    private static var shared: SlackRTMWrapper? = nil
+    var rtm: SKRTMAPI? = nil
+    static var shared: SlackRTMWrapper? = nil
     
     private init(withStore store: Store<AppState>) {
         self.store = store
@@ -44,10 +44,23 @@ class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
     
     func notificationForEvent(_ event: Event, type: EventType, instance: SKRTMAPI) {
         switch type {
+        case .ok:
+            if let _ = event.text {
+                self.store.dispatch(AppActionz.acknowledgeMessage(
+                    timestampAndTemporaryId: TimestampAndTemporaryId(
+                        timestamp: event.ts!,
+                        temporaryId: Int(event.replyTo!)
+                    )
+                ))
+            } else {
+                self.store.dispatch(AppActionz.acknowledgeMessage(
+                    error: MessageDeliveryError(temporaryId: Int(event.replyTo!), actualError: APIError.messageNotAcknowledged)
+                ))
+            }
         case .message:
             // TODO so, so bad
-            let message = Message(id: event.ts!, text: event.text!, timestamp: Double(event.ts!)!)
-            self.store.dispatch(AppActions.receivedMessage(message: message))
+            let message = Message(text: event.text!, timestamp: event.ts!)
+            self.store.dispatch(AppActionz.receivedMessage(message: message))
         default:
             break
         }

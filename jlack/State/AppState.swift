@@ -25,22 +25,28 @@ struct AppState: StateType {
 }
 
 struct Message: Hashable {
+    let temporaryId: Int? // for attributing delivery confirmations to queued messages
+    let text: String
+    let timestamp: String // Slack wants you to treat these as strings for Precision Reasons
+    
+    init(text: String, timestamp: String, temporaryId: Int? = nil) {
+        self.text = text
+        self.timestamp = timestamp
+        self.temporaryId = temporaryId
+    }
+    
     static func ==(lhs: Message, rhs: Message) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.timestamp == rhs.timestamp
     }
     
     var hashValue: Int {
         get {
-            return self.id.hashValue
+            return self.timestamp.hashValue
         }
     }
-    
-    var id: String
-    var text: String
-    var timestamp: Double // TODO I am lazy
 }
 
 struct Conversation {
     var id: String
-    var messageIds: [String]
+    var messageTimestamps: [String]
 }

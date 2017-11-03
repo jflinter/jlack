@@ -246,28 +246,67 @@
             </objects>
             <point key="canvasLocation" x="629" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Text Editor View Controller-->
         <scene sceneID="WZi-cz-3HS">
             <objects>
-                <viewController id="Gtm-g2-qMQ" sceneMemberID="viewController">
+                <viewController id="Gtm-g2-qMQ" customClass="TextEditorViewController" customModule="jlack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="bla-cQ-XuQ">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-Gx-0Ak">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <rect key="frame" x="0.0" y="49" width="450" height="251"/>
                                 <connections>
                                     <segue destination="OxZ-ki-9js" kind="embed" id="lWC-az-7ls"/>
                                 </connections>
                             </containerView>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i69-G3-KC3">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
+                                <clipView key="contentView" id="eLd-6x-aVm">
+                                    <rect key="frame" x="1" y="1" width="448" height="48"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Fg4-Bu-xu5">
+                                            <rect key="frame" x="0.0" y="0.0" width="448" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="448" height="48"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cHa-1Z-oaA"/>
+                                </constraints>
+                                <edgeInsets key="contentInsets" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="PPE-XV-rFX">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ho7-ae-KAt">
+                                    <rect key="frame" x="433" y="1" width="16" height="48"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="i69-G3-KC3" secondAttribute="trailing" id="5xq-1a-BN5"/>
+                            <constraint firstAttribute="bottom" secondItem="i69-G3-KC3" secondAttribute="bottom" id="CmX-ce-s3h"/>
                             <constraint firstItem="lzQ-Gx-0Ak" firstAttribute="leading" secondItem="bla-cQ-XuQ" secondAttribute="leading" id="EEb-Hf-90e"/>
+                            <constraint firstItem="Fg4-Bu-xu5" firstAttribute="top" secondItem="lzQ-Gx-0Ak" secondAttribute="bottom" id="Fj5-Te-sCY"/>
                             <constraint firstItem="lzQ-Gx-0Ak" firstAttribute="top" secondItem="bla-cQ-XuQ" secondAttribute="top" id="LC7-bC-h6z"/>
                             <constraint firstAttribute="trailing" secondItem="lzQ-Gx-0Ak" secondAttribute="trailing" id="QFB-68-dNI"/>
-                            <constraint firstAttribute="bottom" secondItem="lzQ-Gx-0Ak" secondAttribute="bottom" id="yIW-3u-635"/>
+                            <constraint firstItem="i69-G3-KC3" firstAttribute="leading" secondItem="bla-cQ-XuQ" secondAttribute="leading" id="ibh-e3-bDz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageHeightConstraint" destination="cHa-1Z-oaA" id="PPn-cz-vNG"/>
+                        <outlet property="messageScrollView" destination="i69-G3-KC3" id="OVE-JP-CVm"/>
+                        <outlet property="messageTextView" destination="Fg4-Bu-xu5" id="kXy-cw-Xex"/>
+                        <outlet property="messagesContainer" destination="lzQ-Gx-0Ak" id="HPz-eE-1lP"/>
+                    </connections>
                 </viewController>
                 <customObject id="bhQ-1L-tXa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,13 +320,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1L-Yq-C2l">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1L-Yq-C2l">
                                 <rect key="frame" x="0.0" y="38" width="450" height="262"/>
                                 <clipView key="contentView" drawsBackground="NO" id="eiS-vk-yTP">
                                     <rect key="frame" x="1" y="1" width="448" height="260"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="3Ng-hx-hrq" id="KBg-51-KbD">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="3Ng-hx-hrq" id="KBg-51-KbD">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="260"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
