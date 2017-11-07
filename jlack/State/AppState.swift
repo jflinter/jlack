@@ -9,44 +9,79 @@
 import ReSwift
 import Foundation
 
-// Think of this as a database. Each variable is a table. Each model here should be as *normalized* as possible.
+// Think of this as a database. Each struct is a table. Each model here should be as *normalized* as possible.
 struct AppState: StateType {
-    init() {
-        quickOpenDisplayed = false
-        accessToken = nil
-        conversations = []
-        messages = []
-    }
-    
-    var quickOpenDisplayed: Bool
-    var accessToken: String?
-    var conversations: [Conversation]
-    var messages: [Message]
+    var quickOpenDisplayed: Bool = false
+    var accessToken: String? = nil
+    var conversations: ConversationState = ConversationState()
+    var messages: MessageState = MessageState()
 }
 
-struct Message: Hashable {
-    let temporaryId: Int? // for attributing delivery confirmations to queued messages
-    let text: String
-    let timestamp: String // Slack wants you to treat these as strings for Precision Reasons
+struct ConversationState: Equatable {
+    // TODO initializing these to known defaults; they should instead be loaded on launch.
+    fileprivate static let yakshackId = "C7SEJ0AUU"
+    fileprivate static let yakshack = Conversation(id: yakshackId, name: "general")
+    var conversationsByID: [String: Conversation] = [ConversationState.yakshackId: ConversationState.yakshack]
+    var selectedConversationId: String? = ConversationState.yakshackId
+    var selectedConversation: Conversation? {
+        guard let id = selectedConversationId else { return nil }
+        return conversationsByID[id]
+    }
+    var pendingMessages: [String: String] = [:] // temporary id to conversation id
     
-    init(text: String, timestamp: String, temporaryId: Int? = nil) {
-        self.text = text
-        self.timestamp = timestamp
-        self.temporaryId = temporaryId
+    func inserting(_ conversation: Conversation) -> ConversationState {
+        var state = self
+        state.conversationsByID.merge([conversation.id: conversation], uniquingKeysWith: {x, y in x})
+        return state
     }
     
-    static func ==(lhs: Message, rhs: Message) -> Bool {
-        return lhs.timestamp == rhs.timestamp
-    }
-    
-    var hashValue: Int {
-        get {
-            return self.timestamp.hashValue
-        }
+    static func ==(lhs: ConversationState, rhs: ConversationState) -> Bool {
+        return lhs.conversationsByID == rhs.conversationsByID && lhs.selectedConversationId == rhs.selectedConversationId
     }
 }
 
-struct Conversation {
-    var id: String
-    var messageTimestamps: [String]
+struct MessageState {
+    private var messagesByID: [String: Message] = [:]
+    private var pendingMessagesByID: [Int: PendingMessage] = [:]
+    
+    func messages(forConversationId conversationId: String) -> [Message] {
+        return self.messagesByID.values.filter { $0.conversationId == conversationId }.sorted { $0.timestamp < $1.timestamp }
+    }
+    
+    func pendingMessages(forConversationId conversationId: String) -> [PendingMessage] {
+        return self.pendingMessagesByID.values.filter { $0.conversationId == conversationId }.sorted { $0.timestamp < $1.timestamp }
+    }
+    
+    func inserting(_ message: Message) -> MessageState {
+        var state = self
+        state.messagesByID.merge([message.timestamp: message], uniquingKeysWith: {x, y in x})
+        return state
+    }
+    
+    func inserting(_ messages: [Message]) -> MessageState {
+        var state = self
+        let normalized: [String: Message] = Dictionary(messages.map {($0.timestamp, $0)}, uniquingKeysWith: { x, y in return x })
+        state.messagesByID.merge(normalized, uniquingKeysWith: {x, y in x})
+        return state
+    }
+    
+    func insertingPending(_ pendingMessage: PendingMessage) -> MessageState {
+        var state = self
+        state.pendingMessagesByID[pendingMessage.temporaryId] = pendingMessage
+        return state
+    }
+    
+    // TODO this might be reducer logic
+    func handlingMessageConfirmation(_ acknowledgement: MessageAcknowledged) -> MessageState {
+        var state = self
+        guard let pending = state.pendingMessagesByID.removeValue(forKey: acknowledgement.temporaryId) else { return state }
+        let message = Message(text: acknowledgement.text, timestamp: acknowledgement.timestamp, conversationId: pending.conversationId)
+        return state.inserting(message)
+    }
+    
+    func removingPendingWithId(_ pendingMessageId: Int) -> MessageState {
+        var state = self
+        state.pendingMessagesByID.removeValue(forKey: pendingMessageId)
+        return state
+    }
 }

@@ -26,6 +26,10 @@
 		041577DF1FAC1F6B00F581F3 /* SKWebAPI.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 041577D81FAC1F6A00F581F3 /* SKWebAPI.framework.dSYM */; };
 		041577E21FAC207700F581F3 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041577E11FAC207700F581F3 /* APIErrors.swift */; };
 		04264C1C1FAA2E6D007D58E2 /* SlackRTMWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */; };
+		04510ADF1FB017B300426DF8 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510ADE1FB017B300426DF8 /* Conversations.swift */; };
+		04510AE11FB0180500426DF8 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510AE01FB0180500426DF8 /* Conversation.swift */; };
+		04510AE31FB0183600426DF8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510AE21FB0183600426DF8 /* Message.swift */; };
+		04510AE51FB0E59500426DF8 /* PendingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510AE41FB0E59500426DF8 /* PendingMessage.swift */; };
 		0474A0D11FA9A95E00A58F10 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D01FA9A95E00A58F10 /* AppReducer.swift */; };
 		0474A0D31FA9A9AF00A58F10 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D21FA9A9AF00A58F10 /* AppStore.swift */; };
 		0474A0D51FA9AB5600A58F10 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474A0D41FA9AB5600A58F10 /* Settings.swift */; };
@@ -112,6 +116,10 @@
 		041577D81FAC1F6A00F581F3 /* SKWebAPI.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SKWebAPI.framework.dSYM; path = Carthage/Build/Mac/SKWebAPI.framework.dSYM; sourceTree = "<group>"; };
 		041577E11FAC207700F581F3 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackRTMWrapper.swift; sourceTree = "<group>"; };
+		04510ADE1FB017B300426DF8 /* Conversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversations.swift; sourceTree = "<group>"; };
+		04510AE01FB0180500426DF8 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		04510AE21FB0183600426DF8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		04510AE41FB0E59500426DF8 /* PendingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingMessage.swift; sourceTree = "<group>"; };
 		0474A0D01FA9A95E00A58F10 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		0474A0D21FA9A9AF00A58F10 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		0474A0D41FA9AB5600A58F10 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -179,6 +187,9 @@
 			children = (
 				0474A0D21FA9A9AF00A58F10 /* AppStore.swift */,
 				048E59A11FA9A6D8008B81A5 /* AppState.swift */,
+				04510AE01FB0180500426DF8 /* Conversation.swift */,
+				04510AE21FB0183600426DF8 /* Message.swift */,
+				04510AE41FB0E59500426DF8 /* PendingMessage.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -190,6 +201,7 @@
 				049C1DA21FAAFB5B002AA563 /* Authentication.swift */,
 				049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */,
 				041577B51FAC140800F581F3 /* Messages.swift */,
+				04510ADE1FB017B300426DF8 /* Conversations.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -228,14 +240,14 @@
 		04F4C2C51FA82AD900885250 /* jlack */ = {
 			isa = PBXGroup;
 			children = (
+				0474A0D01FA9A95E00A58F10 /* AppReducer.swift */,
+				049C1D9E1FAAEBDB002AA563 /* State */,
+				049C1D9F1FAAEBF0002AA563 /* Actions */,
 				04DC80A11FAC5D24002D2093 /* SKRTMAPI.swift */,
 				04F4C2C61FA82AD900885250 /* AppDelegate.swift */,
 				04FE9C651FAADC3A001B2CCE /* KeyboardListeningWindow.swift */,
 				04FE9C671FAAE31C001B2CCE /* KeyIgnoringTextView.swift */,
-				049C1D9E1FAAEBDB002AA563 /* State */,
-				0474A0D01FA9A95E00A58F10 /* AppReducer.swift */,
 				041577E11FAC207700F581F3 /* APIErrors.swift */,
-				049C1D9F1FAAEBF0002AA563 /* Actions */,
 				0474A0D41FA9AB5600A58F10 /* Settings.swift */,
 				04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */,
 				0484F3D81FA84A1C00083721 /* MessagesCollectionViewController.swift */,
@@ -369,12 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04510AE11FB0180500426DF8 /* Conversation.swift in Sources */,
 				0484F3D91FA84A1C00083721 /* MessagesCollectionViewController.swift in Sources */,
 				049C1DA31FAAFB5B002AA563 /* Authentication.swift in Sources */,
 				0474A0D71FA9AE0300A58F10 /* AppActions.swift in Sources */,
 				04FE9C621FAABB02001B2CCE /* QuickOpenViewController.swift in Sources */,
 				04264C1C1FAA2E6D007D58E2 /* SlackRTMWrapper.swift in Sources */,
 				04FE9C681FAAE31C001B2CCE /* KeyIgnoringTextView.swift in Sources */,
+				04510AE31FB0183600426DF8 /* Message.swift in Sources */,
 				04FE9C661FAADC3A001B2CCE /* KeyboardListeningWindow.swift in Sources */,
 				049C1DA91FAAFF2E002AA563 /* KeyEvent.swift in Sources */,
 				041577E21FAC207700F581F3 /* APIErrors.swift in Sources */,
@@ -390,7 +404,9 @@
 				04DC80A21FAC5D24002D2093 /* SKRTMAPI.swift in Sources */,
 				04FE9C601FAAB9B2001B2CCE /* MainContainerViewController.swift in Sources */,
 				0474A0D11FA9A95E00A58F10 /* AppReducer.swift in Sources */,
+				04510ADF1FB017B300426DF8 /* Conversations.swift in Sources */,
 				048E59A21FA9A6D8008B81A5 /* AppState.swift in Sources */,
+				04510AE51FB0E59500426DF8 /* PendingMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

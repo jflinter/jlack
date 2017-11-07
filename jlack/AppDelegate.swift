@@ -22,15 +22,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, StoreSubscriber {
         
         AppStore.shared.subscribe(self) { sub in
             sub.select { state in
-                return state.accessToken
-            }.skipRepeats(==)
+                return (state.accessToken, state.conversations.selectedConversationId)
+                }.skipRepeats({ (tuple1, tuple2) -> Bool in
+                    return tuple1.0 == tuple2.0 && tuple1.1 == tuple2.1
+                })
         }
     }
     
-    func newState(state: String?) {
-        if state != nil {
+    func newState(state: (String?, String?)) {
+        if let _ = state.0, let conversationId = state.1 {
             // TODO this should live elsewhere
-            AppStore.shared.dispatch(AppActionz.loadMessages())
+            AppStore.shared.dispatch(AppActionz.loadMessages(inConversationWithId: conversationId))
         }
     }
     

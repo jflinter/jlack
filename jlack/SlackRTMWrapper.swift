@@ -47,9 +47,10 @@ class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
         case .ok:
             if let _ = event.text {
                 self.store.dispatch(AppActionz.acknowledgeMessage(
-                    timestampAndTemporaryId: TimestampAndTemporaryId(
+                    messageAcknowledged: MessageAcknowledged(
                         timestamp: event.ts!,
-                        temporaryId: Int(event.replyTo!)
+                        temporaryId: Int(event.replyTo!),
+                        text: event.text!
                     )
                 ))
             } else {
@@ -59,8 +60,11 @@ class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
             }
         case .message:
             // TODO so, so bad
-            let message = Message(text: event.text!, timestamp: event.ts!)
-            self.store.dispatch(AppActionz.receivedMessage(message: message))
+            // TODO specifically, we need to update SKCore to get conversationId not channelId or DMs will break
+            if let text = event.text, let timestamp = event.ts, let conversationId = event.channelID {
+                let message = Message(text: text, timestamp: timestamp, conversationId: conversationId)
+                self.store.dispatch(AppActionz.receivedMessage(message: message))
+            }
         default:
             break
         }

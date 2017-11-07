@@ -34,14 +34,15 @@ fileprivate struct ReceivedMessageAction: AppAction {
 
 fileprivate struct SendMessageAction: AppAction {
     let type: AppActionType
-    init(text: String, temporaryId: Int) {
-        self.type = .sendMessage(text: text, temporaryId: temporaryId)
+    init(text: String, conversationId: String, temporaryId: Int) {
+        self.type = .sendMessage(text: text, inConversation: conversationId, temporaryId: temporaryId)
     }
 }
 
-struct TimestampAndTemporaryId {
+struct MessageAcknowledged {
     let timestamp: String
     let temporaryId: Int
+    let text: String
 }
 
 fileprivate struct AcknowledgedMessageAction: AppAction {
@@ -49,22 +50,22 @@ fileprivate struct AcknowledgedMessageAction: AppAction {
     init(error: MessageDeliveryError) {
         self.type = .messageAcknowledged(result: Result(error: error))
     }
-    init(timestampAndTemporaryId: TimestampAndTemporaryId) {
-        self.type = .messageAcknowledged(result: Result(timestampAndTemporaryId))
+    init(messageAcknowledged: MessageAcknowledged) {
+        self.type = .messageAcknowledged(result: Result(messageAcknowledged))
     }
 }
 
 extension AppActionz {
     
-    static func loadMessages() -> ReSwift.Action {
+    static func loadMessages(inConversationWithId conversationId: String) -> ReSwift.Action {
         guard let token = AppStore.shared.state.accessToken else {
             return LoadedMessagesAction(error: .unauthenticated)
         }
         let web = WebAPI(token: token)
         // TODO so, so bad
-        web.channelHistory(id: "C7SEJ0AUU", success: { history in
+        web.channelHistory(id: conversationId, success: { history in
             let messages = history.messages.map({ (m: SKWebAPI.Message) -> Message in
-                return Message(text: m.text!, timestamp: m.ts!)
+                return Message(text: m.text!, timestamp: m.ts!, conversationId: conversationId)
             })
             AppStore.shared.dispatch(LoadedMessagesAction(messages: messages))
         }, failure: { error in
@@ -79,18 +80,20 @@ extension AppActionz {
     
     static func sendMessage(text: String) -> ReSwift.Action {
         let temporaryId = Int(arc4random()) % 100000000
+        // TODO bad bad bad
+        let conversationId = AppStore.shared.state.conversations.selectedConversationId!
         do {
-            try SlackRTMWrapper.shared?.rtm?.sendMessage(text, channelID: "C7SEJ0AUU", id: String(temporaryId))
+            try SlackRTMWrapper.shared?.rtm?.sendMessage(text, channelID: conversationId, id: String(temporaryId))
         } catch let error {
             DispatchQueue.main.async {
                 AppStore.shared.dispatch(AcknowledgedMessageAction(error: MessageDeliveryError(temporaryId: temporaryId, actualError: error)))
             }
         }
-        return SendMessageAction(text: text, temporaryId: temporaryId)
+        return SendMessageAction(text: text, conversationId: conversationId, temporaryId: temporaryId)
     }
     
-    static func acknowledgeMessage(timestampAndTemporaryId: TimestampAndTemporaryId) -> ReSwift.Action {
-        return AcknowledgedMessageAction(timestampAndTemporaryId: timestampAndTemporaryId)
+    static func acknowledgeMessage(messageAcknowledged: MessageAcknowledged) -> ReSwift.Action {
+        return AcknowledgedMessageAction(messageAcknowledged: messageAcknowledged)
     }
     
     static func acknowledgeMessage(error: MessageDeliveryError) -> ReSwift.Action {

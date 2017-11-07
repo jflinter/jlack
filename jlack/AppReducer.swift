@@ -8,12 +8,14 @@
 
 import ReSwift
 import Dollar
+import Foundation
 
 func appReducer(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     state.quickOpenDisplayed = quickLookReducer(action: action, state: state.quickOpenDisplayed)
     state.accessToken = accessTokenReducer(action: action, state: state.accessToken)
     state.messages = messageReducer(action: action, state: state.messages)
+    state.conversations = conversationReducer(action: action, state: state.conversations)
     return state
 }
 
@@ -43,41 +45,39 @@ func accessTokenReducer(action: Action, state: String?) -> String? {
     }
 }
 
-func messageReducer(action: Action, state: [Message]) -> [Message] {
+func conversationReducer(action: Action, state: ConversationState) -> ConversationState {
+    guard let action = action as? AppAction else { return state }
+    switch action.type {
+    default: break
+    }
+    return state
+}
+
+func messageReducer(action: Action, state: MessageState) -> MessageState {
     guard let action = action as? AppAction else { return state }
     switch action.type {
     case .loadedMessages(let result):
         switch result {
         case .success(let messages):
-            return `$`.uniq(state + messages, by: { $0.timestamp }).sorted(by: { $0.timestamp < $1.timestamp })
+            return state.inserting(messages)
         case .failure(_):
-            return [] // TODO figure out errors
+            return state // TODO figure out errors
         }
-    case .sendMessage(let text, let temporaryId):
-        // TODO this is hacky - i'm trying to get messages into a stable sort order
-        // so that if we send a message, then a new message is received before ours is confirmed,
-        // we can still sort the whole array of messages and get the correct order.
-        let tmpTimestamp = (state.last?.timestamp ?? "") + "$"
-        let message = Message(text: text, timestamp: tmpTimestamp, temporaryId: temporaryId)
-        return state + [message]
+    case .sendMessage(let text, let inConversation, let temporaryId):
+        let pendingMessage = PendingMessage(temporaryId: temporaryId, text: text, conversationId: inConversation, timestamp: Date())
+        return state.insertingPending(pendingMessage)
     case .messageAcknowledged(let result):
         switch result {
-        case .success(let timestampAndTemporaryId):
-            // loop through messages, convert temp message into a real one
-            return state.map { message in
-                if message.temporaryId == timestampAndTemporaryId.temporaryId {
-                    return Message(text: message.text, timestamp: timestampAndTemporaryId.timestamp)
-                }
-                return message
-            }
-        case .failure(let error): // TODO show an alert or something
-            // loop through messages, remove the one that failed to send
-            return state.filter { $0.temporaryId == error.temporaryId }
+        case .success(let acknowledgement):
+            return state.handlingMessageConfirmation(acknowledgement)
+        case .failure(let error):
+            // TODO show an alert or something?
+            return state.removingPendingWithId(error.temporaryId)
         }
     case .receivedMessage(let message):
-        return `$`.uniq(state + [message], by: { $0.timestamp }).sorted(by: { $0.timestamp < $1.timestamp })
+        return state.inserting(message)
     case .logout:
-        return []
+        return MessageState()
     default:
         return state
     }

@@ -12,11 +12,16 @@ import Result
 
 enum AppActionType {
     case authenticated(accessToken: String)
+    
     case requestedMessages
     case loadedMessages(result: Result<[Message], APIError>)
     case receivedMessage(message: Message)
-    case sendMessage(text: String, temporaryId: Int)
-    case messageAcknowledged(result: Result<TimestampAndTemporaryId, MessageDeliveryError>)
+    case sendMessage(text: String, inConversation: String, temporaryId: Int)
+    case messageAcknowledged(result: Result<MessageAcknowledged, MessageDeliveryError>)
+    
+    case requestedConversations
+    case loadedConversations(result: Result<[Conversation], APIError>)
+    
     case loginPressed
     case logout
     case pushedCommandT

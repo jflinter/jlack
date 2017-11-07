@@ -42,6 +42,7 @@ class TextEditorViewController: NSViewController, NSTextViewDelegate {
                 if !textView.string.isEmpty {
                     AppStore.shared.dispatch(AppActionz.sendMessage(text: textView.string))
                     textView.string = ""
+                    return true
                 }
             }
         }
