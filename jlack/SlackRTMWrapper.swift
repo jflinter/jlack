@@ -52,18 +52,20 @@ class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
     func notificationForEvent(_ event: Event, type: EventType, instance: SKRTMAPI) {
         switch type {
         case .ok:
-            if let _ = event.text {
-                self.store.dispatch(AppActionz.acknowledgeMessage(
-                    messageAcknowledged: MessageAcknowledged(
-                        timestamp: event.ts!,
-                        temporaryId: Int(event.replyTo!),
-                        text: event.text!
-                    )
-                ))
-            } else {
-                self.store.dispatch(AppActionz.acknowledgeMessage(
-                    error: MessageDeliveryError(temporaryId: Int(event.replyTo!), actualError: APIError.messageNotAcknowledged)
-                ))
+            if let replyTo = event.replyTo {
+                if let _ = event.text {
+                    self.store.dispatch(AppActionz.acknowledgeMessage(
+                        messageAcknowledged: MessageAcknowledged(
+                            timestamp: event.ts!,
+                            temporaryId: Int(replyTo),
+                            text: event.text!
+                        )
+                    ))
+                } else {
+                    self.store.dispatch(AppActionz.acknowledgeMessage(
+                        error: MessageDeliveryError(temporaryId: Int(replyTo), actualError: APIError.messageNotAcknowledged)
+                    ))
+                }
             }
         case .message:
             // TODO so, so bad
