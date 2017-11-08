@@ -27,15 +27,15 @@ class Settings: StoreSubscriber {
         Settings.accessToken = state.accessToken
     }
     
-    private init(withStore store: Store<AppState>) {
-        self.store = store
+    private init(withStore store: MainThreadStoreWrapper<AppState>) {
+        self.store = store.store
         if let token = Settings.accessToken {
             store.dispatch(AppActionz.authenticated(accessToken: token))
         }
         store.subscribe(self)
     }
     
-    static func load(withStore store: Store<AppState>) {
+    static func load(withStore store: MainThreadStoreWrapper<AppState>) {
         guard self.shared == nil else { return }
         let settings = Settings(withStore: store)
         self.shared = settings

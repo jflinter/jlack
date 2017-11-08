@@ -522,6 +522,9 @@
                                                         <size key="minSize" width="169" height="54"/>
                                                         <size key="maxSize" width="463" height="10000000"/>
                                                         <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="nHV-Hi-SbS" id="jvS-NM-wud"/>
+                                                        </connections>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -544,13 +547,17 @@
                                                 <rect key="frame" x="1" y="1" width="169" height="117"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <collectionView id="7kt-LB-iZu">
+                                                    <collectionView selectable="YES" id="7kt-LB-iZu">
                                                         <rect key="frame" x="0.0" y="0.0" width="169" height="158"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="xhq-qa-MdS">
                                                             <size key="itemSize" width="50" height="50"/>
                                                         </collectionViewFlowLayout>
                                                         <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="nHV-Hi-SbS" id="nEU-Mj-stm"/>
+                                                            <outlet property="delegate" destination="nHV-Hi-SbS" id="R52-do-b6N"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

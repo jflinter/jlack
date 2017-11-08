@@ -33,6 +33,10 @@ class TextEditorViewController: NSViewController, NSTextViewDelegate {
     }
     
     func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if let event = NSApp.currentEvent, let action = AppActionz.fromEvent(event) {
+            AppStore.shared.dispatch(action)
+            return true
+        }
         if commandSelector == #selector(insertNewline(_:)) {
             if let event = NSApp.currentEvent, event.modifierFlags.contains(.shift) {
                 // shift is being held; don't do anything (insert a newline)

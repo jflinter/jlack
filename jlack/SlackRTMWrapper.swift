@@ -22,9 +22,9 @@ class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
         }
     }
     
-    static func load(withStore store: Store<AppState>) {
+    static func load(withStore store: MainThreadStoreWrapper<AppState>) {
         guard self.shared == nil else { return }
-        self.shared = SlackRTMWrapper(withStore: store)
+        self.shared = SlackRTMWrapper(withStore: store.store)
     }
     
     func newState(state: String?) {
@@ -39,6 +39,13 @@ class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
     }
     
     func initialSetup(json: [String : Any], instance: SKRTMAPI) {
+        if let channelsJSON = json["channels"] as? [[String: Any]] {
+            let channels: [Conversation] = channelsJSON.flatMap { channelJSON in
+                guard let id = channelJSON["id"] as? String, let name = channelJSON["name"] as? String else { return nil }
+                return Conversation(id: id, name: name)
+            }
+            AppStore.shared.dispatch(AppActionz.loadedConversations(channels))
+        }
         // TODO?
     }
     
@@ -61,7 +68,7 @@ class SlackRTMWrapper: StoreSubscriber, RTMAdapter {
         case .message:
             // TODO so, so bad
             // TODO specifically, we need to update SKCore to get conversationId not channelId or DMs will break
-            if let text = event.text, let timestamp = event.ts, let conversationId = event.channelID {
+            if let text = event.text, let timestamp = event.ts, let conversationId = (event.channelID ?? event.channel?.id) {
                 let message = Message(text: text, timestamp: timestamp, conversationId: conversationId)
                 self.store.dispatch(AppActionz.receivedMessage(message: message))
             }

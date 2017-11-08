@@ -21,6 +21,7 @@ enum AppActionType {
     
     case requestedConversations
     case loadedConversations(result: Result<[Conversation], APIError>)
+    case selectedConversation(conversationId: String)
     
     case loginPressed
     case logout

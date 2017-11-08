@@ -35,6 +35,13 @@ struct ConversationState: Equatable {
         return state
     }
     
+    func inserting(_ conversations: [Conversation]) -> ConversationState {
+        var state = self
+        let normalized: [String: Conversation] = Dictionary(conversations.map {($0.id, $0)}, uniquingKeysWith: { x, y in return x })
+        state.conversationsByID.merge(normalized, uniquingKeysWith: {x, y in x})
+        return state
+    }
+    
     static func ==(lhs: ConversationState, rhs: ConversationState) -> Bool {
         return lhs.conversationsByID == rhs.conversationsByID && lhs.selectedConversationId == rhs.selectedConversationId
     }

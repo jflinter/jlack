@@ -14,13 +14,14 @@ class MainContainerViewController: NSViewController, StoreSubscriber {
     @IBOutlet weak var quickOpenView: NSView!
     @IBOutlet weak var loginView: NSView!
     
-    typealias QuickOpenDisplayedAndAccessToken = (Bool, String?)
+    typealias QuickOpenDisplayedAndAccessTokenAndSelectedConversationId = (Bool, String?, String?)
 
     override func viewWillAppear() {
         super.viewWillAppear()
         AppStore.shared.subscribe(self) { subscription in
-            return subscription.select { ($0.quickOpenDisplayed, $0.accessToken) }.skipRepeats({
-                $0.0 == $1.0 && $0.1 == $1.1
+            let select = subscription.select { ($0.quickOpenDisplayed, $0.accessToken, $0.conversations.selectedConversationId) }
+            return select.skipRepeats({
+                $0.0 == $1.0 && $0.1 == $1.1 && $0.2 == $1.2
             })
         }
     }
@@ -30,8 +31,10 @@ class MainContainerViewController: NSViewController, StoreSubscriber {
         AppStore.shared.unsubscribe(self)
     }
     
-    func newState(state: QuickOpenDisplayedAndAccessToken) {
-        self.quickOpenView.isHidden = !state.0
+    var currentConversationId: String? = nil
+    func newState(state: QuickOpenDisplayedAndAccessTokenAndSelectedConversationId) {
+        self.quickOpenView.isHidden = !state.0 || currentConversationId != state.2
         self.loginView.isHidden = state.1 != nil
+        self.currentConversationId = state.2
     }
 }

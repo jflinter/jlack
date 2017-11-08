@@ -48,6 +48,18 @@ func accessTokenReducer(action: Action, state: String?) -> String? {
 func conversationReducer(action: Action, state: ConversationState) -> ConversationState {
     guard let action = action as? AppAction else { return state }
     switch action.type {
+    case .loadedConversations(let result):
+        switch result {
+        case .success(let conversations):
+            return state.inserting(conversations)
+        case .failure(_):
+            // TODO do something?
+            break
+        }
+    case .selectedConversation(let conversationId):
+        var state = state
+        state.selectedConversationId = conversationId
+        return state
     default: break
     }
     return state

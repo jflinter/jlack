@@ -42,6 +42,8 @@
 		049C1DA31FAAFB5B002AA563 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA21FAAFB5B002AA563 /* Authentication.swift */; };
 		049C1DA61FAAFE25002AA563 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */; };
 		049C1DA91FAAFF2E002AA563 /* KeyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */; };
+		04B76FA91FB18F8300449BB9 /* QuickLookCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B76FA71FB18F8200449BB9 /* QuickLookCollectionViewItem.swift */; };
+		04B76FAA1FB18F8300449BB9 /* QuickLookCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B76FA81FB18F8200449BB9 /* QuickLookCollectionViewItem.xib */; };
 		04DC80A21FAC5D24002D2093 /* SKRTMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC80A11FAC5D24002D2093 /* SKRTMAPI.swift */; };
 		04F4C2C71FA82AD900885250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C2C61FA82AD900885250 /* AppDelegate.swift */; };
 		04F4C2CB1FA82AD900885250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F4C2CA1FA82AD900885250 /* Assets.xcassets */; };
@@ -132,6 +134,8 @@
 		049C1DA21FAAFB5B002AA563 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		049C1DA81FAAFF2E002AA563 /* KeyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEvent.swift; sourceTree = "<group>"; };
+		04B76FA71FB18F8200449BB9 /* QuickLookCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookCollectionViewItem.swift; sourceTree = "<group>"; };
+		04B76FA81FB18F8200449BB9 /* QuickLookCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickLookCollectionViewItem.xib; sourceTree = "<group>"; };
 		04DC80A11FAC5D24002D2093 /* SKRTMAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKRTMAPI.swift; sourceTree = "<group>"; };
 		04F4C2C31FA82AD900885250 /* jlack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jlack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F4C2C61FA82AD900885250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,13 +254,15 @@
 				041577E11FAC207700F581F3 /* APIErrors.swift */,
 				0474A0D41FA9AB5600A58F10 /* Settings.swift */,
 				04264C1B1FAA2E6D007D58E2 /* SlackRTMWrapper.swift */,
-				0484F3D81FA84A1C00083721 /* MessagesCollectionViewController.swift */,
 				049C1DA01FAAF793002AA563 /* LoginViewController.swift */,
 				04FE9C5F1FAAB9B2001B2CCE /* MainContainerViewController.swift */,
 				04FE9C631FAAC6DE001B2CCE /* SplitViewController.swift */,
 				049C1DA41FAAFE25002AA563 /* SidebarViewController.swift */,
-				04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */,
 				041577B31FABE17100F581F3 /* TextEditorViewController.swift */,
+				04FE9C611FAABB02001B2CCE /* QuickOpenViewController.swift */,
+				04B76FA71FB18F8200449BB9 /* QuickLookCollectionViewItem.swift */,
+				04B76FA81FB18F8200449BB9 /* QuickLookCollectionViewItem.xib */,
+				0484F3D81FA84A1C00083721 /* MessagesCollectionViewController.swift */,
 				0484F3E21FA855F500083721 /* MessageCollectionViewItem.swift */,
 				0484F3E31FA855F500083721 /* MessageCollectionViewItem.xib */,
 				04F4C2CA1FA82AD900885250 /* Assets.xcassets */,
@@ -361,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B76FAA1FB18F8300449BB9 /* QuickLookCollectionViewItem.xib in Resources */,
 				04F4C2CB1FA82AD900885250 /* Assets.xcassets in Resources */,
 				0484F3E51FA855F500083721 /* MessageCollectionViewItem.xib in Resources */,
 				04F4C2CE1FA82AD900885250 /* Main.storyboard in Resources */,
@@ -391,6 +398,7 @@
 				04510AE31FB0183600426DF8 /* Message.swift in Sources */,
 				04FE9C661FAADC3A001B2CCE /* KeyboardListeningWindow.swift in Sources */,
 				049C1DA91FAAFF2E002AA563 /* KeyEvent.swift in Sources */,
+				04B76FA91FB18F8300449BB9 /* QuickLookCollectionViewItem.swift in Sources */,
 				041577E21FAC207700F581F3 /* APIErrors.swift in Sources */,
 				049C1DA61FAAFE25002AA563 /* SidebarViewController.swift in Sources */,
 				041577B61FAC140800F581F3 /* Messages.swift in Sources */,
