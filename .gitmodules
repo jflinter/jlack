@@ -7,9 +7,6 @@
 [submodule "Carthage/Checkouts/Dollar"]
 	path = Carthage/Checkouts/Dollar
 	url = https://github.com/ankurp/Dollar.git
-[submodule "Carthage/Checkouts/SKRTMAPI"]
-	path = Carthage/Checkouts/SKRTMAPI
-	url = https://github.com/jflinter/SKRTMAPI.git
 [submodule "Carthage/Checkouts/ReSwift"]
 	path = Carthage/Checkouts/ReSwift
 	url = https://github.com/ReSwift/ReSwift.git
