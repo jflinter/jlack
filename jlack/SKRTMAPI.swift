@@ -243,7 +243,9 @@ public final class SKRTMAPI: RTMDelegate {
         case .hello:
             connected = true
         case .pong:
-            pong = event.replyTo
+            if let rply = event.replyTo {
+                pong = Int(rply)
+            }
         case .teamMigrationStarted:
             connect()
         case .error:
